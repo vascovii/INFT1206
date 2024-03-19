@@ -1,6 +1,3 @@
-// Thanks to Renan Martineli for this version of the demo
-
-// setup canvas
 
 const para = document.querySelector('p');
 let count = 0;
@@ -11,14 +8,14 @@ const ctx = canvas.getContext('2d');
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 
-// function to generate random number
+
 
 function random(min,max) {
   const num = Math.floor(Math.random()*(max-min)) + min;
   return num;
 };
 
-// function to generate random RGB color value
+
 
 function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
@@ -160,15 +157,14 @@ class EvilCircle extends Shape {
 
 }
 
-// define array to store balls and populate it
+
 
 const balls = [];
 
 while (balls.length < 25) {
   const size = random(10, 20);
   const ball = new Ball(
-    // ball position always drawn at least one ball width
-    // away from the edge of the canvas, to avoid drawing errors
+    
     random(0 + size, width - size),
     random(0 + size, height - size),
     random(-7, 7),
